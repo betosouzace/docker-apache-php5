@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.7"
 services:
   app:
     image: nimmis/apache-php5
@@ -7,4 +7,4 @@ services:
       - "80:80"
     restart: always
     volumes:
-      - C:\wamp64\www:/var/www/html
+      - C:\Users\Beto\Documents\dev\Repositorios:/var/www/html
