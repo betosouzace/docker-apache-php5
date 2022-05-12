@@ -12,4 +12,8 @@ RUN php5enmod mcrypt
 RUN rm -rf /var/lib/apt/lists/* && cd /tmp && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
 RUN sed -i 's/display_errors = On/display_errors = Off/g' /etc/php5/apache2/php.ini
 RUN sed -i 's/short_open_tag = Off/short_open_tag = On/g' /etc/php5/apache2/php.ini
+RUN a2enmod rewrite
+# Configure apache
+RUN sed -i 's/\(^upload_max_filesize = \).*/\120M/g' /etc/php5/apache2/php.ini
+RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 RUN service apache2 restart
