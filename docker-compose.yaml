@@ -5,6 +5,6 @@ services:
     build: .
     ports: 
       - "80:80"
-    restart: always
+    restart: "no"
     volumes:
-      - C:\Users\Beto\Documents\dev\Repositorios:/var/www/html
+      - ./:/var/www/html
