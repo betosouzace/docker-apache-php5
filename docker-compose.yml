@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www/html
+    environment:
+      PHP_DISPLAY_ERRORS: "Off"
+      PHP_SHORT_OPEN_TAG: "On"
+      APACHE_UPLOAD_MAX_FILESIZE: "120M"
+      APACHE_ALLOW_OVERRIDE: "All"
