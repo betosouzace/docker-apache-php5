@@ -36,6 +36,9 @@ RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 # Set the working directory to /var/www/html
 WORKDIR /var/www/html
 
+# Copia os arquivos do projeto para o diretório /var/www/html
+# COPY . /var/www/html
+
 # Expose port 80 from the container
 EXPOSE 80
 
